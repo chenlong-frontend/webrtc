@@ -1,0 +1,31 @@
+{
+    "name": "@quanshi/gnet-webrtc",
+    "version": "0.1.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "module": "esm/index.js",
+    "types": "esm/index.d.ts",
+    "files": [
+        "esm",
+        "dist",
+        "compiled"
+    ],
+    "scripts": {
+        "dev": "father dev",
+        "build": "father build"
+    },
+    "dependencies": {
+        "lodash": "^4.17.20",
+        "ua-parser-js": "^1.0.2"
+    },
+    "devDependencies": {
+        "@types/ua-parser-js": "^0.7.36",
+        "@types/lodash": "^4.14.161",
+        "father": "^4.1.7"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://qsnpm.quanshi.com/"
+    }
+}

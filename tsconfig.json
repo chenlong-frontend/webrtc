@@ -1,0 +1,27 @@
+{
+  "include": [
+    "src/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "typeRoots": [
+    ],
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es7",
+      "es2018",
+    ]
+  }
+}

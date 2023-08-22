@@ -1,0 +1,46 @@
+import { IPeerconnectionReconnect } from './peerconnection-helper/IPeerconnectionReconnect'
+export abstract class IPublish extends IPeerconnectionReconnect {
+    type: string;
+    codec: string;
+    suspendTracks: any[];
+    _waitingSuccessResponse: boolean;
+    detecting: boolean;
+    isLowStreamConnection: boolean;
+    lowStreamConnection: any;
+    disabledVideoTrack: any;
+    lowStreamEncoding: any;
+    lowStreamParameter: any;
+    handleSetOptimizationMode: (a: any, b: any, c: any) => void;
+    handleGetLocalAudioStats: (a: any) => void;
+    handleGetLocalVideoStats: (a: any) => void;
+    handleCloseVideoTrack: () => void;
+    handleCloseAudioTrack: (a: any) => void;
+    handleReplaceTrack: (track: any, success?: any, fail?: any) => any;
+    handleStreamRenegotiate: (a: any, b: any) => void;
+    renegotiateWithGateway: () => Promise<any>;
+    handleMuteAudioTrack: ({ track: a, muted: b }: any, c: any, e: any) => void;
+    handleMuteVideoTrack: ({ muted: a }: any, b: any, c: any) => void;
+    getAllTracks(): any[];
+    removeTracks(a: any, b: any): Promise<any>;
+    updateControlMessage(): Promise<void>;
+    setSimulcastVideoRtpEncodingParameters(a: any): Promise<void>;
+    startP2PConnection(): any;
+    reportPublishEvent(a: any, b: any, c?: any): void;
+    closeP2PConnection(isClose?: boolean): Promise<void>;
+    getNetworkQuality(): any;
+    handleUpdateBitrateLimit(a: any): void;
+    setAudioTrackMuteState(a: any, b: any): Promise<any>;
+    setVideoTrackMuteState(a: any): Promise<void>;
+    uploadSlowStats(a: any): void;
+    addSimulcast4Firefox(a: any): Promise<void>;
+    bindTrackEvents(a: any): void;
+    unbindTrackEvents(a: any): void;
+    addTrackWithPC(a: any): Promise<boolean | void>;
+    handleResetRemoteSdp(): any;
+    setRtpSenderParametersByTrackConfig(a: any): Promise<any>;
+    updateAnswerSDP(a: any): any;
+    createPC(): void;
+    closePC(isClose?: boolean): Promise<any>;
+    onPCDisconnected(a: any): void;
+    setLowStreamEncoding(a: any, b: any): Promise<void>;
+}
