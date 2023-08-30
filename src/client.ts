@@ -284,7 +284,9 @@ export class Client extends EventDispatch implements IClient {
         let remoteStream = this._remoteStream.get(streamId)
         if (remoteStream) {
             logger.info(`[${this._clientId}] subscribe stream ${streamId} has exist`)
-            return null
+            const result = 'audio' === mediaType ? remoteStream._audioTrack : remoteStream._videoTrack
+            locked()
+            return result
         }
         try {
             remoteStream = new Subscribe(streamId, this._statsCollector, extraInfo, trackType)
